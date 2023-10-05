@@ -29,15 +29,10 @@
 //  }
 
 
-
+                                            /* PRIMER ENTREGA
 
 let paciente = prompt("Ingrese su nombre...")
 let dni = parseInt(prompt("Ingrese su DNI..."))
-
-if (dni === Number){
-    alert("Introduzca los numeros...");
-}
-
 
 function saludo() {
     if((paciente != "") && (dni != "")){
@@ -53,19 +48,11 @@ function saludo() {
 }  
 saludo()
 
-
-
-
 let tipo = prompt("Escriba que profesional: Medico/Cirujano/Obstetra")
 
+while (tipo != "" ){
 
-
-
-
-
-while (tipo  ){
-
-    
+                
         switch (tipo){
             case "Medico":
                 alert("El medico atiende de: \n  L a V de 07hs a 12hs")
@@ -87,6 +74,7 @@ while (tipo  ){
                    
         }
         
+        
        
     paciente = prompt("Ingrese su nombre...");
     dni = parseInt(prompt("Ingrese su DNI..."));
@@ -99,8 +87,33 @@ while (tipo  ){
 
 
 
+ */
+/* 
+                                                SEGUNDA ENTREGA */
 
 
 
 
+function vino( nombre , anio , bodega , precio ){
 
+    this.nombre = nombre;
+    this.anio = anio;
+    this.bodega = bodega;
+    this.precio = precio;
+
+}
+
+const vino1 = new vino ("atardedcer1" , 1976 , "Katina");
+const vino2 = new vino ("atardecer2" , 1850 , "Katina");
+const vino3 = new vino ("atardecer2", 1940 , "Katina");
+
+
+
+const vinoteca = [vino1 , vino2, vino3 ]
+vinoteca.push (vino)
+
+class bodega{
+    
+    this.precio = this.precio *1.21;
+
+}
