@@ -1,34 +1,4 @@
 
-
-//  let paciente = prompt ("Ingrese nombre y apellido")
-//  let dni = prompt ("Escriba su DNI...")
-// let turnos = 0
-
-
-// if ((paciente != "") && (dni != "")){
-//     for (turnos; turnos = 10; turnos++ ){
-//         let resultado = turnos + 1;
-        
-        
-//     }
-        
-//     alert("Bienvenido " + paciente +" " + dni+ " " + resultado )
-// }else{
-//     alert("POR FAVOR COMPLETE LOS DATOS")
-// }
-
-
-
-
-//  for (let turnos = 0;turnos<=10;turnos++){
-//      if((paciente != "") && (dni != "")){
-        
-//      let resultado = turnos + 1;
-  
-//      alert("bienvenido "+paciente+" "+dni+" " +resultado)  }
-//  }
-
-
                                             /* PRIMER ENTREGA
 
 let paciente = prompt("Ingrese su nombre...")
@@ -89,31 +59,62 @@ while (tipo != "" ){
 
  */
 /* 
-                                                SEGUNDA ENTREGA */
+                                                
 
 
 
 
-function vino( nombre , anio , bodega , precio ){
 
-    this.nombre = nombre;
-    this.anio = anio;
-    this.bodega = bodega;
-    this.precio = precio;
+
+
+
+                                                        SEGUNDA ENTREGA */
+
+
+
+
+const vino = function ( nombre , anio , bodega , precio ){
+
+    this.nombre = nombre
+    this.anio = anio
+    this.bodega = bodega
+    this.precio = precio
 
 }
 
-const vino1 = new vino ("atardedcer1" , 1976 , "Katina");
-const vino2 = new vino ("atardecer2" , 1850 , "Katina");
-const vino3 = new vino ("atardecer2", 1940 , "Katina");
+let vino1 = new vino ("atardecer1" , 1976 , "Katina", "$1500")
+let vino2 = new vino ("atardecer2" , 1850 , "Katina", "$1600")
+let vino3 = new vino ("atardecer3", 1940 , "Katina", "$1700")
+let vino4 = new vino ("atardecer4", 1975 , "Katina", "$1300")
+let vino5 = new vino ("atardecer5", 1970 , "Katina", "$1500")
+let vino6 = new vino ("atardecer6", 1930 , "Katina", "$1900")
 
 
 
-const vinoteca = [vino1 , vino2, vino3 ]
+let vinoteca = [vino1 , vino2, vino3, vino4, vino5, vino6 ]
 vinoteca.push (vino)
 
-class bodega{
-    
-    this.precio = this.precio *1.21;
+console.log(vinoteca)
+
+
+
+
+
+function cliente(){
+    let pedido = prompt("Que vino desea?").toUpperCase()
+    let canti = parseInt(prompt("Cuantos quiere?"))
+    let tenemos = vinoteca.find((v)=>vino.nombre.toUpperCase() .include(pedido))
+
+    if ( tenemos.lenght >0){
+        console.log(tenemos)
+    }else{
+        console.log("No tenemos")
+    }
+
+   
 
 }
+
+cliente();
+
+
