@@ -73,14 +73,18 @@ while (tipo != "" ){
 
 
 
-const vino = function ( nombre , anio , bodega , precio ){
+const vino = function (nombre, anio, bodega, precio) {
 
-    this.nombre = nombre
-    this.anio = anio
-    this.bodega = bodega
-    this.precio = precio
+        this.nombre = nombre.toUpperCase();
+        this.anio = parseInt(anio);
+        this.bodega = bodega.toUpperCase();
+        this.precio = parseInt(precio);
 
-}
+    }
+
+
+let vinoteca = [vino ]
+
 
 let vino1 = new vino ("atardecer1" , 1976 , "Katina", "$1500")
 let vino2 = new vino ("atardecer2" , 1850 , "Katina", "$1600")
@@ -91,10 +95,10 @@ let vino6 = new vino ("atardecer6", 1930 , "Katina", "$1900")
 
 
 
-let vinoteca = [vino1 , vino2, vino3, vino4, vino5, vino6 ]
-vinoteca.push (vino)
 
+vinoteca.push(vino)
 console.log(vinoteca)
+
 
 
 
@@ -103,10 +107,14 @@ console.log(vinoteca)
 function cliente(){
     let pedido = prompt("Que vino desea?").toUpperCase()
     let canti = parseInt(prompt("Cuantos quiere?"))
-    let tenemos = vinoteca.find((v)=>vino.nombre.toUpperCase() .include(pedido))
+    const tenemos = vinoteca.find(
+        function (x){
+            (x.nombre)===pedido
+        }
+    )
 
-    if ( tenemos.lenght >0){
-        console.log(tenemos)
+    if ( tenemos > 0){
+        console.log("Tenemos")
     }else{
         console.log("No tenemos")
     }
