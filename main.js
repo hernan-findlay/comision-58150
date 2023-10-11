@@ -83,10 +83,8 @@ const vino = function (nombre, anio, bodega, precio) {
     }
 
 
-let vinoteca = [vino ]
 
-
-let vino1 = new vino ("atardecer1" , 1976 , "Katina", "$1500")
+const vino1 = new vino ("atardecer1" , 1976 , "Katina", "$1500")
 let vino2 = new vino ("atardecer2" , 1850 , "Katina", "$1600")
 let vino3 = new vino ("atardecer3", 1940 , "Katina", "$1700")
 let vino4 = new vino ("atardecer4", 1975 , "Katina", "$1300")
@@ -95,25 +93,19 @@ let vino6 = new vino ("atardecer6", 1930 , "Katina", "$1900")
 
 
 
-
-vinoteca.push(vino)
-console.log(vinoteca)
-
-
-
+let vinoteca = [vino1,vino2,vino3,vino4,vino5,vino6]
 
 
 
 function cliente(){
     let pedido = prompt("Que vino desea?").toUpperCase()
     let canti = parseInt(prompt("Cuantos quiere?"))
-    const tenemos = vinoteca.find(
-        function (x){
-            (x.nombre)===pedido
-        }
+    const tenemos = vinoteca.some(
+        (x)=>x.nombre===pedido.toUpperCase()
+        
     )
 
-    if ( tenemos > 0){
+    if ( tenemos === true){
         console.log("Tenemos")
     }else{
         console.log("No tenemos")
